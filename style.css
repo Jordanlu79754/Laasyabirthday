@@ -1,199 +1,72 @@
-/* style.css */
-
-/* Reset styles */
-body, html {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%; /* Ensure the height covers the viewport */
-  }
-  
-  /* Background container styling */
-  .background-container {
-    position: relative;
-    height: 100vh; /* Full viewport height */
-    background: url('confetti4.jpg') no-repeat center center fixed;
-    background-size: cover;
+    font-family: 'Baloo 2', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  /* Center box styling */
-  .center-box {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-    border-radius: 15px; /* Rounded corners */
-    padding: 20px;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Warm gradient */
+    height: 100vh;
+}
+
+.container {
     text-align: center;
-    width: 1350px; /* Box width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow for visual appeal */
-    height: 700px;
-  }
-  
-  /* Bunny image styling */
-  .container {
-    text-align: center; /* Center align the container content */
-    margin-top: 20px;
-  }
-  
-  .bunny-image {
-    width: 200px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px;
-    border: 2px solid #ddd; /* Optional border */
-    border-radius: 10px;
-  }
-  
-  #mute-button {
-    position: fixed; /* Keeps the button visible on the page */
-    top: 30px; /* Position it 20px from the top */
-    left: 20px; /* Position it 20px from the left */
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+}
+
+.present-container {
+    position: relative; /* Keeps elements within this container positioned relative to it */
+}
+
+.present-container img {
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    transition: transform 0.3s ease;
 }
 
-#mute-button:hover {
-    background-color: #ff85b9;
+.present-container img:hover {
+    transform: scale(1.1); /* Slightly enlarge the present on hover */
 }
 
-@keyframes neonPulse {
-    0% {
-        text-shadow: 
-            0 0 5px #ff00ff,   
-            0 0 10px #ff00ff,  
-            0 0 15px #ff00ff,  
-            0 0 20px #ff00ff,  
-            0 0 30px #ff00ff,  
-            0 0 40px #ff00ff;
-    }
-    50% {
-        text-shadow: 
-            0 0 10px #ff00ff,   
-            0 0 20px #ff00ff,  
-            0 0 30px #ff00ff,  
-            0 0 40px #ff00ff,  
-            0 0 50px #ff00ff,  
-            0 0 60px #ff00ff;
-    }
-    100% {
-        text-shadow: 
-            0 0 5px #ff00ff,   
-            0 0 10px #ff00ff,  
-            0 0 15px #ff00ff,  
-            0 0 20px #ff00ff,  
-            0 0 30px #ff00ff,  
-            0 0 40px #ff00ff;
-    }
-}
-
-.header h1 {
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 36px;
-    text-align: center;
-    color: #fff; /* White text */
-    animation: neonPulse 1.5s infinite; /* Apply animation */
-}
-
-.message {
-    font-family: 'Comfortaa', sans-serif;
-    font-size: 20px;
-    color: #333;
-}
-
-/* Balloon container */
-.balloon-container {
+.bunny-container {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none; /* Prevent balloons from interfering with user clicks */
+    bottom: 450px;
+    left: 20px;
+    display: flex;
+    align-items: flex-start;
 }
 
-/* Balloon styles */
-.balloon {
+.bunny {
+    width: 200px;
+}
+
+.speech-bubble {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    position: absolute; /* Absolute position within .present-container */
+    top: -100px; /* Position above the image */
+    left: 50%; /* Center horizontally above the image */
+    transform: translateX(-50%); /* Ensure it stays centered above the image */
+    animation: bobbing 2s infinite;
+}
+
+.speech-bubble:after {
+    content: '';
     position: absolute;
-    bottom: -100px;
-    width: 50px;
-    height: 70px;
-    border-radius: 50%;
-    animation: float 10s infinite ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
 }
 
-/* Balloon colors and positions */
-.balloon1 {
-    left: 20%;
-    background-color: #ff6b6b;
-    animation-delay: 0s;
-}
-.balloon2 {
-    left: 50%;
-    background-color: #ffcd6b;
-    animation-delay: 2s;
-}
-.balloon3 {
-    left: 80%;
-    background-color: #6b9bff;
-    animation-delay: 4s;
-}
-
-/* Animation for floating balloons */
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-300px) scale(1.1);
-    }
-    100% {
-        transform: translateY(-1000px) scale(1.2);
-        opacity: 0;
-    }
-}
-
-/* Confetti container */
-#confetti-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Ensure it doesn't block clicks */
-    z-index: 9999; /* Very high value to appear above other elements */
-}
-
-/* Confetti elements */
-@keyframes fall {
-    to {
-        transform: translateY(120vh); /* Ensure it falls completely off the screen */
-    }
-}
-
-.confetti {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background-color: #ff6b6b;
-    animation: fall 8s linear infinite;
-}
-
-
-/* Swaying animation */
-@keyframes sway {
+@keyframes bobbing {
     0%, 100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
     50% {
-        transform: translateX(20px); /* Sway slightly */
+        transform: translateY(-5px);
     }
 }

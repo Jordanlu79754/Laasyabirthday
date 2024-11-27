@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What's in the Box?</title>
-    <link rel="stylesheet" href="present-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+    <title>Happy Birthday Laasya!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Main container for the page -->
-    <div class="container">
-        <h1 class="special-text">🎁 A Special Surprise Awaits! 🎁</h1>
-        <div class="present-container">
-            <img src="unopened-present.png" alt="An unopened present" id="present">
+    <div class="background-container">
+        <div class="center-box">
+            <div class="header">
+                <h1>🎉 Happy Birthday!!! 🎉</h1>
+            </div>
+            <div class="message">
+                <p>Here's a message inside a box.</p>
+            </div>
+            <img src="bunny.jpg" alt="Bunny" class="bunny-image">
+            <!-- Ensure the audio is autoplaying and looping -->
+            <audio id="birthday-song" src="BirthdaySong.mp3" autoplay loop></audio>
+            <button id="mute-button">🔈 Mute</button>
         </div>
     </div>
-
-    <!-- Bunny and speech bubble -->
-    <div class="bunny-container">
-        <img src="bunny.png" alt="A cute bunny" class="bunny">
-        <div class="speech-bubble">I wonder what's in the box?</div>
-    </div>    
-
-    <!-- JavaScript -->
-    <script src="present.js"></script>
+    <div class="balloon-container">
+        <div class="balloon balloon1"></div>
+        <div class="balloon balloon2"></div>
+        <div class="balloon balloon3"></div>
+    </div>
+    
+    <!-- Confetti container for the confetti animation -->
+    <div id="confetti-container"></div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
