@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: 'Baloo 2', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Warm gradient */
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.present-container {
+    position: relative; /* Keeps elements within this container positioned relative to it */
+}
+
+.present-container img {
+    cursor: pointer;
+    width: 700px;
+    transition: transform 0.3s ease;
+}
+
+.present-container img:hover {
+    transform: scale(1.1); /* Slightly enlarge the present on hover */
+}
+
+.bunny-container {
+    position: absolute;
+    bottom: 450px;
+    left: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.bunny {
+    width: 200px;
+}
+
+.speech-bubble {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    position: absolute; /* Absolute position within .present-container */
+    top: -100px; /* Position above the image */
+    left: 50%; /* Center horizontally above the image */
+    transform: translateX(-50%); /* Ensure it stays centered above the image */
+    animation: bobbing 2s infinite;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
