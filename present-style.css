@@ -37,7 +37,7 @@ body, html {
   }
   
   .bunny-image {
-    width: 200px; /* Adjust size as needed */
+    width: 400px; /* Adjust size as needed */
     height: auto; /* Maintain aspect ratio */
     margin: 10px;
     border: 2px solid #ddd; /* Optional border */
@@ -104,6 +104,8 @@ body, html {
     font-family: 'Comfortaa', sans-serif;
     font-size: 20px;
     color: #333;
+    line-height: 1.8;
+    padding: 0 80px;
 }
 
 /* Balloon container */
