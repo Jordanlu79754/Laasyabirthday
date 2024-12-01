@@ -93,7 +93,7 @@ body {
         margin-bottom: 10px; /* Add spacing below the header */
         text-align: center;
         position: relative; /* Set relative position */
-        top: -100px; /* Example: adjust position from the top */
+        top: -120px; /* Example: adjust position from the top */
     }    
 
     /* Present container adjustments */
@@ -125,10 +125,16 @@ body {
     }
 
     .speech-bubble {
-        font-size: 12px; /* Smaller text for speech bubble */
-        top: -100px; /* Position speech bubble closer to the bunny */
-        left: 50%; /* Center it relative to the bunny */
+        font-size: 10px; /* Smaller text for a more compact bubble */
+        top: -20px; /* Position speech bubble closer to the bunny */
+        left: 0%; /* Center it relative to the bunny */
         transform: translateX(-50%); /* Align perfectly */
-        max-width: 80%; /* Prevent overflow on small screens */
-    }
+        width: 200px; /* Fixed width to force line break */
+        height: auto; /* Let the height adjust based on content */
+        padding: 4px 12px; /* More horizontal padding for a wider bubble */
+        border-radius: 10px; /* Optional: add rounded corners for a more rectangular look */
+        line-height: 1.2; /* Tighten the text vertically */
+        word-wrap: break-word; /* Allow text to break into multiple lines */
+        text-align: center; /* Optional: center the text inside the bubble */
+    }    
 }
